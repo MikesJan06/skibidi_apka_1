@@ -1,103 +1,106 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jednoduchá Kalkulačka</title>
+    <meta charset="UTF-8"> <!-- Nastavení kódování stránky na UTF-8 (pro podporu českých znaků) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsivní design pro různé velikosti obrazovek -->
+    <title>Jednoduchá Kalkulačka</title> <!-- Titulek stránky -->
     <style>
         body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f4f4f4;
+            font-family: Arial, sans-serif; /* Nastavení fontu pro celé tělo stránky */
+            display: flex; /* Flexbox pro centrování obsahu */
+            justify-content: center; /* Horizontální centrování */
+            align-items: center; /* Vertikální centrování */
+            height: 100vh; /* Výška stránky nastavena na 100% výšky okna */
+            margin: 0; /* Zrušení okrajů stránky */
+            background-color: #f4f4f4; /* Světle šedé pozadí stránky */
         }
 
         .calculator {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            max-width: 300px;
-            width: 100%;
+            background-color: #fff; /* Bílá barva pozadí kalkulačky */
+            padding: 20px; /* Vnitřní odsazení 20 pixelů */
+            border-radius: 8px; /* Zaoblené rohy */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Jemný stín kolem kalkulačky */
+            max-width: 300px; /* Maximální šířka kalkulačky 300 pixelů */
+            width: 100%; /* Kalkulačka bude na šířku zabírat celou dostupnou šířku rodiče */
         }
 
         .calculator input, .calculator select {
-            width: calc(100% - 20px);
-            padding: 10px;
-            margin: 10px 0;
-            font-size: 18px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            width: calc(100% - 20px); /* Šířka pole bude o 20 pixelů menší než 100% šířky rodiče */
+            padding: 10px; /* Vnitřní odsazení pole */
+            margin: 10px 0; /* Vnější okraje 10 pixelů nahoře a dole */
+            font-size: 18px; /* Velikost písma 18 pixelů */
+            border: 1px solid #ccc; /* Ohraničení polí šedou barvou */
+            border-radius: 4px; /* Zaoblené rohy polí */
         }
 
         .calculator button {
-            width: 100%;
-            padding: 10px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            font-size: 18px;
-            cursor: pointer;
+            width: 100%; /* Tlačítko bude na šířku zabírat celou šířku rodiče */
+            padding: 10px; /* Vnitřní odsazení tlačítka */
+            background-color: #007bff; /* Modré pozadí tlačítka */
+            color: white; /* Bílá barva textu na tlačítku */
+            border: none; /* Bez ohraničení */
+            border-radius: 4px; /* Zaoblené rohy tlačítka */
+            font-size: 18px; /* Velikost písma tlačítka */
+            cursor: pointer; /* Ukazatel myši se změní na ruku při najetí na tlačítko */
         }
 
         .calculator button:hover {
-            background-color: #0056b3;
+            background-color: #0056b3; /* Tmavší modrá při najetí na tlačítko */
         }
 
         .result {
-            margin-top: 20px;
-            font-size: 24px;
-            text-align: center;
+            margin-top: 20px; /* Vnější horní okraj 20 pixelů */
+            font-size: 24px; /* Velikost písma pro výsledek 24 pixelů */
+            text-align: center; /* Výsledek bude zarovnán na střed */
         }
     </style>
 </head>
 <body>
     <div class="calculator">
-        <h2>Jednoduchá Kalkulačka</h2>
-        <input type="number" id="num1" placeholder="První číslo">
-        <select id="operator">
-            <option value="+">+</option>
-            <option value="-">-</option>
-            <option value="*">×</option>
-            <option value="/">÷</option>
+        <h2>Jednoduchá Kalkulačka</h2> <!-- Nadpis kalkulačky -->
+        <input type="number" id="num1" placeholder="První číslo"> <!-- Vstupní pole pro první číslo -->
+        <select id="operator"> <!-- Výběrové pole pro operátor -->
+            <option value="+">+</option> <!-- Možnost pro sčítání -->
+            <option value="-">-</option> <!-- Možnost pro odčítání -->
+            <option value="*">×</option> <!-- Možnost pro násobení -->
+            <option value="/">÷</option> <!-- Možnost pro dělení -->
         </select>
-        <input type="number" id="num2" placeholder="Druhé číslo">
-        <button onclick="calculate()">Vypočítat</button>
-        <div class="result" id="result">Výsledek: </div>
+        <input type="number" id="num2" placeholder="Druhé číslo"> <!-- Vstupní pole pro druhé číslo -->
+        <button onclick="calculate()">Vypočítat</button> <!-- Tlačítko, které spustí funkci 'calculate' při kliknutí -->
+        <div class="result" id="result">Výsledek: </div> <!-- Oblast, kde se zobrazí výsledek výpočtu -->
     </div>
 
     <script>
         function calculate() {
-            var num1 = parseFloat(document.getElementById('num1').value);
-            var operator = document.getElementById('operator').value;
-            var num2 = parseFloat(document.getElementById('num2').value);
-            var result;
+            var num1 = parseFloat(document.getElementById('num1').value); // Načte první číslo z prvního vstupního pole
+            var operator = document.getElementById('operator').value; // Načte operátor ze select boxu
+            var num2 = parseFloat(document.getElementById('num2').value); // Načte druhé číslo z druhého vstupního pole
+            var result; // Proměnná pro výsledek
 
+            // Pokud jsou zadaná čísla neplatná, zobrazí varování
             if (isNaN(num1) || isNaN(num2)) {
                 result = 'Zadejte platná čísla';
             } else {
+                // Podle zvoleného operátoru provede příslušnou matematickou operaci
                 switch (operator) {
                     case '+':
-                        result = num1 + num2;
+                        result = num1 + num2; // Sčítání
                         break;
                     case '-':
-                        result = num1 - num2;
+                        result = num1 - num2; // Odčítání
                         break;
                     case '*':
-                        result = num1 * num2;
+                        result = num1 * num2; // Násobení
                         break;
                     case '/':
-                        result = num2 !== 0 ? num1 / num2 : 'Nulou nelze dělit';
+                        result = num2 !== 0 ? num1 / num2 : 'Nulou nelze dělit'; // Dělení (kontrola dělení nulou)
                         break;
                     default:
-                        result = 'Neplatný operátor';
+                        result = 'Neplatný operátor'; // Zobrazení chyby, pokud operátor není platný
                 }
             }
 
+            // Zobrazení výsledku ve stránce
             document.getElementById('result').innerText = 'Výsledek: ' + result;
         }
     </script>
