@@ -1,5 +1,6 @@
 
 body {
+    text-align: center;
     font-family: Arial, sans-serif; /* Nastavení fontu pro celé tělo stránky */
     display: flex; /* Flexbox pro centrování obsahu */
     justify-content: center; /* Horizontální centrování */
@@ -19,7 +20,7 @@ body {
 }
 
 .calculator input, .calculator select {
-    width: calc(100% - 20px); /* Šířka pole bude o 20 pixelů menší než 100% šířky rodiče xd */
+    width: calc(100% - 20px); /* Šířka pole bude o 20 pixelů menší než 100% šířky rodiče */
     padding: 10px; /* Vnitřní odsazení pole */
     margin: 10px 0; /* Vnější okraje 10 pixelů nahoře a dole */
     font-size: 18px; /* Velikost písma 18 pixelů */
