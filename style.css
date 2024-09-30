@@ -19,7 +19,7 @@ body {
 }
 
 .calculator input, .calculator select {
-    width: calc(100% - 20px); /* Šířka pole bude o 20 pixelů menší než 100% šířky rodiče */
+    width: calc(100% - 20px); /* Šířka pole bude o 20 pixelů menší než 100% šířky rodiče xd */
     padding: 10px; /* Vnitřní odsazení pole */
     margin: 10px 0; /* Vnější okraje 10 pixelů nahoře a dole */
     font-size: 18px; /* Velikost písma 18 pixelů */
