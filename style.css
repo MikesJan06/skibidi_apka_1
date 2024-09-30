@@ -1,3 +1,49 @@
+
 body {
-    text-align: center;
+    font-family: Arial, sans-serif; /* Nastavení fontu pro celé tělo stránky */
+    display: flex; /* Flexbox pro centrování obsahu */
+    justify-content: center; /* Horizontální centrování */
+    align-items: center; /* Vertikální centrování */
+    height: 100vh; /* Výška stránky nastavena na 100% výšky okna */
+    margin: 0; /* Zrušení okrajů stránky */
+    background-color: #f4f4f4; /* Světle šedé pozadí stránky */
+}
+
+.calculator {
+    background-color: #fff; /* Bílá barva pozadí kalkulačky */
+    padding: 20px; /* Vnitřní odsazení 20 pixelů */
+    border-radius: 8px; /* Zaoblené rohy */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Jemný stín kolem kalkulačky */
+    max-width: 300px; /* Maximální šířka kalkulačky 300 pixelů */
+    width: 100%; /* Kalkulačka bude na šířku zabírat celou dostupnou šířku rodiče */
+}
+
+.calculator input, .calculator select {
+    width: calc(100% - 20px); /* Šířka pole bude o 20 pixelů menší než 100% šířky rodiče */
+    padding: 10px; /* Vnitřní odsazení pole */
+    margin: 10px 0; /* Vnější okraje 10 pixelů nahoře a dole */
+    font-size: 18px; /* Velikost písma 18 pixelů */
+    border: 1px solid #ccc; /* Ohraničení polí šedou barvou */
+    border-radius: 4px; /* Zaoblené rohy polí */
+}
+
+.calculator button {
+    width: 100%; /* Tlačítko bude na šířku zabírat celou šířku rodiče */
+    padding: 10px; /* Vnitřní odsazení tlačítka */
+    background-color: #007bff; /* Modré pozadí tlačítka */
+    color: white; /* Bílá barva textu na tlačítku */
+    border: none; /* Bez ohraničení */
+    border-radius: 4px; /* Zaoblené rohy tlačítka */
+    font-size: 18px; /* Velikost písma tlačítka */
+    cursor: pointer; /* Ukazatel myši se změní na ruku při najetí na tlačítko */
+}
+
+.calculator button:hover {
+    background-color: #0056b3; /* Tmavší modrá při najetí na tlačítko */
+}
+
+.result {
+    margin-top: 20px; /* Vnější horní okraj 20 pixelů */
+    font-size: 24px; /* Velikost písma pro výsledek 24 pixelů */
+    text-align: center; /* Výsledek bude zarovnán na střed */
 }
